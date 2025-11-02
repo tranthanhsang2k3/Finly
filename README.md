@@ -19,3 +19,25 @@ Finly is a modern Android application built with Jetpack Compose, designed to he
 - Secure app access with biometric authentication
 - Offline-first: all data stored locally on device
 - Clean, responsive UI with light/dark mode support
+
+### 🗃️ Database Schema (Room)
+
+Finly uses Room as its local database solution. The schema is designed to support flexible and efficient tracking of personal finances.
+
+#### Tables:
+
+- **Transaction**
+    - Stores individual income and expense records.
+    - Linked to a category for classification.
+    - Includes amount, type, note, and timestamp.
+
+- **Category**
+    - Defines types of transactions (e.g., Food, Salary, Transport).
+    - Used for filtering and visualizing data.
+    - Supports both income and expense types.
+
+- **Budget** (optional)
+    - Allows users to set spending limits per category.
+    - Useful for alerts and budget tracking.
+
+All tables are normalized and indexed for performance. Room handles migrations and type safety via Kotlin data classes and DAO interfaces.
